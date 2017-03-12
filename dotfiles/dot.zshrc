@@ -3,7 +3,7 @@
 
 alias zshrc="st ~/.zshrc"
 alias rez="exec zsh"
-alias repi="(cd ~/stuff/powerline-shell/ && ~/stuff/powerline-shell/install.py) && rez"
+alias repi="(cd ~/config/powerline-shell/ && ~/config/powerline-shell/install.py) && rez"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -16,14 +16,8 @@ DEFAULT_USER="peter"
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/peter/.oh-my-zsh
-
-function ct() {
-	~/stuff/powerline-shell/themes/colortest.py 0 0 $1 $1 "Test string"
-}
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,7 +92,7 @@ fi
 
 # Powerline config
 function powerline_precmd() {
-    PS1="$(~/stuff/powerline-shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
+    PS1="$(~/config/powerline-shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
 }
 
 function install_powerline_precmd() {
