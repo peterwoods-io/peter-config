@@ -14,7 +14,10 @@ DEFAULT_USER="peter"
 
 . ~/bin/z.sh
 
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+source ~/stuff/lcat/helpers
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/peter/.oh-my-zsh
