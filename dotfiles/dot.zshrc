@@ -4,6 +4,8 @@
 alias zshrc="st ~/.zshrc"
 alias rez="exec zsh"
 alias repi="(cd ~/config/powerline-shell/ && ~/config/powerline-shell/install.py) && rez"
+alias sourcetree="open -a /Applications/SourceTree.app"
+alias start_psql='pg_ctl -D /usr/local/var/postgres start'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -110,3 +112,5 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
