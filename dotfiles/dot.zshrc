@@ -19,8 +19,6 @@ DEFAULT_USER="peter"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-source ~/stuff/lcat/helpers
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/peter/.oh-my-zsh
 
@@ -33,6 +31,7 @@ export ZSH=/Users/peter/.oh-my-zsh
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=1
+export DISABLE_UPDATE_PROMPT=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
