@@ -6,8 +6,8 @@ class Color(DefaultColor):
     ROOT_INDICATOR_BG = 124
     ROOT_INDICATOR_FG = 226
 
-    HOSTNAME_FG = 15
-    HOSTNAME_BG = 10
+    HOSTNAME_FG = 254
+    HOSTNAME_BG = 166
 
     HOME_SPECIAL_DISPLAY = True
     PATH_FG = 7

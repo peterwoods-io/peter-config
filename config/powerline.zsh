@@ -13,7 +13,7 @@ function rerun_powerline_install() {
 alias repi="rerun_powerline_install && rez"
 
 function powerline_precmd() {
-    PS1="$(~/.peterconfig/submodules/powerline-shell/powerline-shell.py $? --colorize-hostname --shell zsh 2> /dev/null)"
+    PS1="$(~/.peterconfig/submodules/powerline-shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
 }
 
 function install_powerline_precmd() {
