@@ -13,11 +13,11 @@ def add_peter_hostname_segment(powerline):
             powerline.append(host_prompt, FG, BG)
         else:
             if powerline.args.shell == 'bash':
-                host_prompt = ' \\h '
+                host_prompt = ' %s \\h ' % powerline.network
             elif powerline.args.shell == 'zsh':
-                host_prompt = ' %m '
+                host_prompt = ' %s %m ' % powerline.network
             else:
                 import socket
-                host_prompt = ' %s %s ' % socket.gethostname().split('.')[0]
+                host_prompt = ' %s %s ' % (powerline.network, socket.gethostname().split('.')[0])
 
             powerline.append(host_prompt, Color.HOSTNAME_FG, Color.HOSTNAME_BG)
