@@ -1,4 +1,4 @@
-alias zshrc="st ~/.zshrc"
+alias zshrc="$EDITOR ~/.zshrc"
 alias rez="exec zsh"
 
 sourcetree_path=/Applications/SourceTree.app

@@ -1,5 +1,4 @@
 # Powerline config
-#alias repi="(cd $PETER_CONFIG/submodules/powerline-shell/ && $PETER_CONFIG/submodules/powerline-shell/install.py) && rez"
 
 function rerun_powerline_install() {
 	cp $PETER_CONFIG/powerline-shell-customizations/config.py $PETER_CONFIG/submodules/powerline-shell/
@@ -13,18 +12,22 @@ function rerun_powerline_install() {
 alias repi="rerun_powerline_install && rez"
 
 function powerline_precmd() {
-    PS1="$(~/.peterconfig/submodules/powerline-shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
+	peterconfig_powerline_script=$PETER_CONFIG/submodules/powerline-shell/powerline-shell.py
+
+	if [ -e $peterconfig_powerline_script ]; then
+		PS1="$($peterconfig_powerline_script $? --shell zsh 2> /dev/null)"
+	fi
 }
 
 function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
+	for s in "${precmd_functions[@]}"; do
+		if [ "$s" = "powerline_precmd" ]; then
+			return
+		fi
+	done
+	precmd_functions+=(powerline_precmd)
 }
 
 if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
+	install_powerline_precmd
 fi
