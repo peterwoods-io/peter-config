@@ -1,0 +1,1 @@
+. $PETER_CONFIG/submodules/z/z.sh
