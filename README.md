@@ -34,15 +34,17 @@ but for now these steps will get things up and running:
 
 		exec zsh
 
-7. If you want the `powerline-shell` fancy PS1, run `repi` to bootstrap it and set it up properly:
+7. If you want the `powerline-shell` fancy prompt, run `repi` to bootstrap it and set it up properly:
 
 		repi
 
-8. Add any customizations you want during shell init in one of two ways:
+### Customization
+
+Add any customizations you want during shell init in one of two ways:
 	
-	a. Modify `~/.zshrc`. This is particularly useful if you want to customize the plugins that `oh-my-zsh` loads as you can specify them before the `oh-my-zsh` init.
-	
-	b. Add other customizations to `~/.peterconfig/custom/` as `*.zsh` files. These files will be sourced in alphabetical order during shell init, after `oh-my-zsh` initializes. This folder is ignored by git so it won't dirty the repo if you put your own customizations in there. See `~/.peterconfig/config/` for examples of files used to set up the config.
+* Modify `~/.zshrc`. This is particularly useful if you want to customize the plugins that `oh-my-zsh` loads as you can specify them before the `oh-my-zsh` init. See the commented line in `~/.zshrc` for more info about `oh-my-zsh` plugins.
+
+* Add other customizations to `~/.peterconfig/custom/` as `*.zsh` files. These files will be sourced in alphabetical order during shell init, after `oh-my-zsh` initializes. This folder is ignored by git so it won't dirty the repo if you put your own customizations in there. See `~/.peterconfig/config/` for examples of files used to set up the config.
 
 ## Removal
 If you want to get rid of things, use the following steps:
