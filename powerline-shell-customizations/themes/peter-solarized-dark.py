@@ -11,9 +11,9 @@ class Color(DefaultColor):
 
     HOME_SPECIAL_DISPLAY = True
     PATH_FG = 7
-    PATH_BG = 10
+    PATH_BG = 240
     CWD_FG = 15
-    SEPARATOR_FG = 248
+    SEPARATOR_FG = 249
 
     READONLY_BG = 1
     READONLY_FG = 7

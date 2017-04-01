@@ -20,7 +20,10 @@ SEGMENTS = [
 #    'hostname',
 
 # Show a padlock when ssh-ing from another machine
-    'ssh',
+#    'ssh',
+
+# Show the machine's hostname and a padlock when ssh-ing from another machine
+	'peter_hostname',
 
 # Show the current directory. If the path is too long, the middle part is
 # replaced with ellipsis ('...')
