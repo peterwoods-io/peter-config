@@ -42,15 +42,15 @@ SEGMENTS = [
 # Show the current fossil branch and status
 #    'fossil',
 
+# Shows a '#' if the current user is root, '$' otherwise
+# Also, changes color if the last command exited with a non-zero error code
+    'peter_root',
+
 # Show number of running jobs
     'jobs',
 
 # Show the last command's exit code if it was non-zero
     'peter_exit_code',
-
-# Shows a '#' if the current user is root, '$' otherwise
-# Also, changes color if the last command exited with a non-zero error code
-    'peter_root',
 ]
 
 # Change the colors used to draw individual segments in your prompt
