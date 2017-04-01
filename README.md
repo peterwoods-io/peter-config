@@ -26,10 +26,6 @@ but for now these steps will get things up and running:
 
 		mv ~/.zshrc ~/.zshrc.oh-my-zsh-default
 
-	OR
-
-		rm ~/.zshrc
-
 5. Copy the Peter Config default `.zshrc`:
 
 		cp ~/.peterconfig/zshrc-dot.zshrc ~/.zshrc
@@ -48,6 +44,15 @@ but for now these steps will get things up and running:
 	
 	b. Add other customizations to `~/.peterconfig/custom/` as `*.zsh` files. These files will be sourced in alphabetical order during shell init, after `oh-my-zsh` initializes. This folder is ignored by git so it won't dirty the repo if you put your own customizations in there. See `~/.peterconfig/config/` for examples of files used to set up the config.
 
+## Removal
+If you want to get rid of things, use the following steps:
+
+	mv ~/.zshrc.oh-my-zsh-default ~/.zshrc
+	rm -rf ~/.peterconfig
+
+To uninstall `oh-my-zsh` as well:
+
+	sh ~/.oh-my-zsh/tools/uninstall.sh
 
 ## Useful Links
 
