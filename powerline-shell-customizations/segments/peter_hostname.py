@@ -15,7 +15,7 @@ def add_peter_hostname_segment(powerline):
             if powerline.args.shell == 'bash':
                 host_prompt = ' %s \\h ' % powerline.network
             elif powerline.args.shell == 'zsh':
-                host_prompt = ' %s %m ' % powerline.network
+                host_prompt = ' %s %%m ' % powerline.network
             else:
                 import socket
                 host_prompt = ' %s %s ' % (powerline.network, socket.gethostname().split('.')[0])
