@@ -12,10 +12,12 @@ function rerun_powerline_install() {
 alias repi="rerun_powerline_install && rez"
 
 function powerline_precmd() {
+	local lasterr=$?
+
 	peterconfig_powerline_script=$PETER_CONFIG/submodules/powerline-shell/powerline-shell.py
 
 	if [ -e $peterconfig_powerline_script ]; then
-		PS1="$($peterconfig_powerline_script $? --shell zsh 2> /dev/null)"
+		PS1="$(${peterconfig_powerline_script} ${lasterr} --shell zsh 2> /dev/null)"
 	fi
 }
 
