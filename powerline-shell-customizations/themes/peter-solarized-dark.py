@@ -10,7 +10,7 @@ class Color(DefaultColor):
     HOSTNAME_BG = 166
 
     HOME_SPECIAL_DISPLAY = True
-    PATH_FG = 7
+    PATH_FG = 254
     PATH_BG = 240
     CWD_FG = 15
     SEPARATOR_FG = 249
@@ -29,7 +29,7 @@ class Color(DefaultColor):
     CMD_PASSED_FG = 15
     CMD_PASSED_BG = 2
     CMD_FAILED_FG = 1
-    CMD_FAILED_BG = 8
+    CMD_FAILED_BG = 0
 
     SVN_CHANGES_FG = REPO_DIRTY_FG
     SVN_CHANGES_BG = REPO_DIRTY_BG
