@@ -14,7 +14,7 @@ but for now these steps will get things up and running:
 
 2. Clone this repo and its submodules into `~/.peterconfig`:
 
-		git clone --recursive https://github.com/futileohm/peter-config.git ~/.peterconfig
+		git clone --recursive https://github.com/peterwoods-io/peter-config.git ~/.peterconfig
 
 3. Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
 
