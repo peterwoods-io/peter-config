@@ -1,24 +1,16 @@
 # Powerline config
 
 function rerun_powerline_install() {
-	cp $PETER_CONFIG/powerline-shell-customizations/config.py $PETER_CONFIG/submodules/powerline-shell/
-	cp $PETER_CONFIG/powerline-shell-customizations/segments/* $PETER_CONFIG/submodules/powerline-shell/segments/
-	cp $PETER_CONFIG/powerline-shell-customizations/themes/* $PETER_CONFIG/submodules/powerline-shell/themes/
-	(cd $PETER_CONFIG/submodules/powerline-shell/ && $PETER_CONFIG/submodules/powerline-shell/install.py)
-	rm $PETER_CONFIG/submodules/powerline-shell/segments/peter*
-	rm $PETER_CONFIG/submodules/powerline-shell/themes/peter*
+	cp $PETER_CONFIG/powerline-shell-customizations/segments/* $PETER_CONFIG/submodules/powerline-shell/powerline_shell/segments/
+	ln $PETER_CONFIG/powerline-shell.json ~/.powerline-shell.json
+	(cd $PETER_CONFIG/submodules/powerline-shell/ && python $PETER_CONFIG/submodules/powerline-shell/setup.py install)
+	rm $PETER_CONFIG/submodules/powerline-shell/powerline_shell/segments/peter*
 }
 
 alias repi="rerun_powerline_install && rez"
 
 function powerline_precmd() {
-	local lasterr=$?
-
-	peterconfig_powerline_script=$PETER_CONFIG/submodules/powerline-shell/powerline-shell.py
-
-	if [ -e $peterconfig_powerline_script ]; then
-		PS1="$(${peterconfig_powerline_script} ${lasterr} --shell zsh 2> /dev/null)"
-	fi
+	PS1="$(powerline-shell --shell zsh $?)"
 }
 
 function install_powerline_precmd() {

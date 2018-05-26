@@ -5,7 +5,7 @@ source $PETER_CONFIG/base.zsh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nano'
 else
-  export EDITOR='st'
+  export EDITOR='subl'
 fi
 
 # Load all the peterconfig files
@@ -24,3 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Load all the peterconfig custom files
 peterconfig_source_all $PETER_CONFIG/custom
+
+if [ -x /usr/libexec/path_helper ]; then
+  eval $(/usr/libexec/path_helper -s)
+fi
