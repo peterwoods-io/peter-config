@@ -1,6 +1,0 @@
-[submodule "submodules/powerline-shell"]
-	path = submodules/powerline-shell
-	url = https://github.com/banga/powerline-shell
-[submodule "submodules/z"]
-	path = submodules/z
-	url = https://github.com/rupa/z.git
