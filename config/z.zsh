@@ -1,1 +1,1 @@
-. $PETER_CONFIG/submodules/z/z.sh
+source $PETER_CONFIG/zsh-z.plugin.zsh
