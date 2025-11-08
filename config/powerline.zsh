@@ -1,16 +1,14 @@
 # Powerline config
 
-function rerun_powerline_install() {
-	cp $PETER_CONFIG/powerline-shell-customizations/segments/* $PETER_CONFIG/submodules/powerline-shell/powerline_shell/segments/
-	ln $PETER_CONFIG/powerline-shell.json ~/.powerline-shell.json
-	(cd $PETER_CONFIG/submodules/powerline-shell/ && python $PETER_CONFIG/submodules/powerline-shell/setup.py install)
-	rm $PETER_CONFIG/submodules/powerline-shell/powerline_shell/segments/peter*
-}
-
-alias repi="rerun_powerline_install && rez"
-
 function powerline_precmd() {
-	PS1="$(powerline-shell --shell zsh $?)"
+    PS1="$(powerline-go -hostname-only-if-ssh -modules venv,host,ssh,cwd,perms,git,jobs,exit,root -error $? -jobs ${${(%):%j}:-0})"
+
+    # Uncomment the following line to automatically clear errors after showing
+    # them once. This not only clears the error for powerline-go, but also for
+    # everything else you run in that shell. Don't enable this if you're not
+    # sure this is what you want.
+
+    #set "?"
 }
 
 function install_powerline_precmd() {
@@ -22,6 +20,6 @@ function install_powerline_precmd() {
 	precmd_functions+=(powerline_precmd)
 }
 
-if [ "$TERM" != "linux" ]; then
+if [ "$TERM" != "linux" ] && which powerline-go > /dev/null; then
 	install_powerline_precmd
 fi
